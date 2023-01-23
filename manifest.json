@@ -1,0 +1,12 @@
+{
+    "name": "Breading",
+    "version": "1.0.0",
+    "description": "Taguette helper",
+    "manifest_version": 3,
+    "permissions": ["scripting"],
+    "author": "Carolyn Zou",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Breading"
+    }
+}
