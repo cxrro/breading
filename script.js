@@ -23,12 +23,12 @@ if ( savenewtagbutton.length ) {
 }
 console.log("saved new tag " + tagname);
 
-function addTagToHighlight(){
-	console.log("finished waiting, attempting to add tag to highlight");
-	// applies the new tag to the highlight
+function findNewest(){
+	// try to find the tag name in the list
 	parent = document.getElementById("highlight-add-form");
 	var taglabels = parent.getElementsByClassName("form-check-label");
 	function getNewestLabel() {
+		var newest = null;
 		for (var i = 0; i < taglabels.length; i++) {
 			var tag = taglabels[i].innerHTML;
 			if (tag == tagname) {
@@ -39,9 +39,10 @@ function addTagToHighlight(){
 			}
 		}
 	}
-	getNewestLabel(); //TODO: make this a while loop to wait for the tag to be added
+}
 
-	// click save button on the new highlight box
+// click save button on the new highlight box
+function saveHighlight(){
 	if (newest != null) {
 		parent = document.getElementById("highlight-add-form");
 		var descendants = parent.getElementsByClassName("btn-primary"); 
@@ -51,5 +52,13 @@ function addTagToHighlight(){
 	}
 }
 
-// need to wait for the tag to be added because taguette is slow
-setTimeout(addTagToHighlight,500);
+// check if the tag has been added
+function checkTagAdded() {
+	getNewestLabel();
+	if (newest != null) {
+		saveHighlight();
+	}
+}
+
+// keep checking for the tag to be added because taguette is slow
+setInterval(checkTagAdded,50);
