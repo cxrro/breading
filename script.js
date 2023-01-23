@@ -24,30 +24,32 @@ if ( savenewtagbutton.length ) {
 console.log("saved new tag " + tagname);
 
 function addTagToHighlight(){
-console.log("finished waiting, attempting to add tag to highlight");
-// applies the new tag to the highlight
-parent = document.getElementById("highlight-add-form");
-var taglabels = parent.getElementsByClassName("form-check-label");
-function getNewestLabel() {
-	for (var i = 0; i < taglabels.length; i++) {
-		var tag = taglabels[i].innerHTML;
-		if (tag == tagname) {
-			console.log("found tag: " + tagname)
-			newest = taglabels[i];
-			newest.previousSibling.checked = true;
-			break;
+	console.log("finished waiting, attempting to add tag to highlight");
+	// applies the new tag to the highlight
+	parent = document.getElementById("highlight-add-form");
+	var taglabels = parent.getElementsByClassName("form-check-label");
+	function getNewestLabel() {
+		for (var i = 0; i < taglabels.length; i++) {
+			var tag = taglabels[i].innerHTML;
+			if (tag == tagname) {
+				console.log("found tag: " + tagname)
+				newest = taglabels[i];
+				newest.previousSibling.checked = true;
+				break;
+			}
+		}
+	}
+	getNewestLabel(); //TODO: make this a while loop to wait for the tag to be added
+
+	// click save button on the new highlight box
+	if (newest != null) {
+		parent = document.getElementById("highlight-add-form");
+		var descendants = parent.getElementsByClassName("btn-primary"); 
+		if ( descendants.length ) {
+			descendants[0].click();
 		}
 	}
 }
-getNewestLabel(); //TODO: make this a while loop to wait for the tag to be added
-
-// click save button on the new highlight box
-if (newest != null) {
-parent = document.getElementById("highlight-add-form");
-var descendants = parent.getElementsByClassName("btn-primary"); 
-if ( descendants.length ) {
-      descendants[0].click();
-}}}
 
 // need to wait for the tag to be added because taguette is slow
 setTimeout(addTagToHighlight,500);
