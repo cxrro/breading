@@ -13,5 +13,6 @@ chrome.action.onClicked.addListener((tab) => {
 	  target: {tabId: tab.id},
 	  files: ['main.js']
 	})
-	.then(() => console.log("injected main.js"))
+	.then(() => console.log("injected breading script"))
 });
+
