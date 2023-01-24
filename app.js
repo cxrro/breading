@@ -6,7 +6,7 @@ async function getCurrentTab() {
 }
 
 let tab = null
-getCurrentTab();
+tab = getCurrentTab();
 let id = tab.id
 let info = tab.info
 
