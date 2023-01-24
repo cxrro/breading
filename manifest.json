@@ -12,7 +12,10 @@
     "action":{
         "default_title": "TAGUETTE HIGHLIGHT"
     },
-    "background": {
-        "service_worker": "app.js"
-    }
+    "content_scripts": [
+        {
+          "matches": ["https://taguette.communitydata.science/*"],
+          "js": ["main.js"]
+        }
+      ]
 }

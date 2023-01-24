@@ -10,7 +10,7 @@ tab = getCurrentTab();
 let id = tab.id
 let info = tab.info
 
-chrome.tabs.onUpdated.addListener(function (id, info, tab) {
+chrome.tabs.onUpdated.addListener(function (info, tab) {
     console.log(info);
     if (info && info.url) {
       if (info.url.includes("taguette")) {
