@@ -7,9 +7,7 @@
         "scripting", 
         "activeTab",
         "tabs",
-        "browserAction",
-        "browserAction.setBadgeText",
-        "browserAction.setBadgeBackgroundColor"
+        "browserAction"
     ],
     "author": "carro",
     "action":{
