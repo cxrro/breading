@@ -14,6 +14,9 @@ function highlightAndNewTag(){
 
 	// ask for tag name
 	tagname = prompt("Enter tag name:");
+	if (tagname == null || tagname == "") {
+		return;
+	}
 	console.log("tagname: " + tagname);
 
 	// click add tag button
