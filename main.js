@@ -1,11 +1,26 @@
+var keybinding;
+
+document.addEventListener('keydown', function(event) {
+  if (!keybinding && event.code === 'Backquote') {
+    setKeybinding();
+  }
+});
+
+// function to handle the prompt and button logic
+function setKeybinding() {
+  keybinding = prompt("Enter the key you want to set as the keybinding:");
+  if(keybinding == null || keybinding == "") {
+    keybinding = "default value";
+  }
+}
+
 function keypress(event) {
-	if (event.key === '`' || event.code === 'Backquote') {
+	if (event.key === keybinding) {
 		highlightAndNewTag();
 	}
 }
 
 document.addEventListener('keydown', keypress);
-
 function highlightAndNewTag(){
 	var newest = null;
 	var creating = true;
