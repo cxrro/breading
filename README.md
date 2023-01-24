@@ -1,4 +1,4 @@
-# this chromium extension adds some functionality to taguette
+# chromium extension for taguette functionality
 
 currently supports:
 - quick add new tag to highlight with "`"
