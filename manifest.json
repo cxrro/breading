@@ -6,8 +6,7 @@
     "permissions": [
         "scripting", 
         "activeTab",
-        "tabs",
-        "action"
+        "tabs"
     ],
     "author": "carro",
     "action":{
