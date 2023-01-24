@@ -1,5 +1,6 @@
 var newest = null;
 var creating = true;
+var current_selection = describeSelection();
 createHighlight(current_selection);
 
 // ask for tag name
@@ -40,6 +41,37 @@ function findNewest(){
 	}
 }
 
+function describeSelection() {
+	var sel = window.getSelection();
+	if(sel.rangeCount != 0) {
+	  var range = sel.getRangeAt(0);
+	  if(!range.collapsed) {
+		var start = describePos(range.startContainer, range.startOffset);
+		var end = describePos(range.endContainer, range.endOffset);
+		if(start !== null && end !== null) {
+		  return [start, end];
+		}
+	  }
+	}
+	return null;
+  }
+
+  function describePos(node, offset) {
+	// Convert current offset from character to bytes
+	offset = lengthUTF8(node.textContent.substring(0, offset));
+	while(!node.id) {
+	  if(node.previousSibling) {
+		node = node.previousSibling;
+		offset += lengthUTF8(node.textContent);
+	  } else {
+		node = node.parentNode;
+	  }
+	}
+	if(node.id.substring(0, 11) != 'doc-offset-') {
+	  return null;
+	}
+	return parseInt(node.id.substring(11)) + offset;
+  }
 // keep checking for the tag to be added
 setInterval(checkTagAdded, 1000);
 
@@ -63,4 +95,15 @@ function saveHighlight(){
 			descendants[0].click();
 		}
 	}
+}
+
+function createHighlight(selection) {
+	document.getElementById('highlight-add-id').value = '';
+	document.getElementById('highlight-add-start').value = selection[0];
+	document.getElementById('highlight-add-end').value = selection[1];
+	document.getElementById('highlight-add-form').reset();
+}
+
+function lengthUTF8(s) {
+	return (new TextEncoder('utf-8').encode(s)).length;
 }
