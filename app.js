@@ -7,14 +7,22 @@ async function getCurrentTab() {
 
 let tab = null
 getCurrentTab();
+let id = tab.id
+let info = tab.info
 
-if (tab.title.includes("Taguette")) {
-	chrome.scripting.executeScript({
-	  target: {tabId: tab.id},
-	  files: ['main.js']
-	})
-	chrome.action.setBadgeBackgroundColor(
-		{color: "#8CD7A0"}
-	)
-	console.log("injected breading script")
-}
+chrome.tabs.onUpdated.addListener(function (id, info, tab) {
+    console.log(info);
+    if (info && info.url) {
+      if (info.url.includes("taguette")) {
+		chrome.scripting.executeScript({
+		target: {tabId: tab.id},
+		files: ['main.js']
+		})
+		chrome.action.setBadgeBackgroundColor(
+			{color: "#8CD7A0"}
+		)
+		console.log("injected breading script")
+		}
+	}
+});
+
