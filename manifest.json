@@ -7,7 +7,7 @@
         "scripting", 
         "activeTab",
         "tabs",
-        "browserAction"
+        "action"
     ],
     "author": "carro",
     "action":{
