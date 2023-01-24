@@ -1,11 +1,10 @@
+var keybinding;
+
 document.addEventListener('keydown', function(event) {
-  if (event.code === 'Backquote') {
+  if (!keybinding && event.code === 'Backquote') {
     setKeybinding();
   }
 });
-
-
-var keybinding;
 
 // function to handle the prompt and button logic
 function setKeybinding() {
@@ -22,7 +21,6 @@ function keypress(event) {
 }
 
 document.addEventListener('keydown', keypress);
-
 function highlightAndNewTag(){
 	var newest = null;
 	var creating = true;
