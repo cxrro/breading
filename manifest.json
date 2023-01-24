@@ -10,7 +10,7 @@
     ],
     "author": "carro",
     "action":{
-        "default_title": "TAGUETTE"
+        "default_title": "TAGUETTE HIGHLIGHT"
     },
     "background": {
         "service_worker": "app.js"
