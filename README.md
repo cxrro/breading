@@ -9,6 +9,6 @@ change the domain in manifest if applicable
 
 to-do:
 - [ ] change extension icon when active
-- [ ] customizeable hotkey
+- [x] customizeable hotkey
 - [ ] see tags on hover
 - [ ] search tags
