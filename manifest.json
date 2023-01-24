@@ -6,7 +6,9 @@
     "permissions": [
         "scripting", 
         "activeTab",
-        "tabs"
+        "tabs",
+        "browserAction",
+        "browserAction.setBadgeText"
     ],
     "author": "carro",
     "action":{
