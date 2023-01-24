@@ -3,10 +3,16 @@
     "version": "1.0.0",
     "description": "Taguette helper",
     "manifest_version": 3,
-    "permissions": ["scripting"],
-    "author": "Carolyn Zou",
+    "permissions": [
+        "scripting", 
+        "activeTab",
+        "tabs"
+    ],
+    "author": "carro",
     "action":{
-        "default_popup": "index.html",
-        "default_title": "Breading"
+        "default_title": "TAGUETTE"
+    },
+    "background": {
+        "service_worker": "app.js"
     }
 }
