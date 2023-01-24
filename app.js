@@ -8,14 +8,13 @@ async function getCurrentTab() {
 let tab = null
 getCurrentTab();
 
-chrome.action.onClicked.addListener((tab) => {
+if (tab.title.includes("Taguette")) {
 	chrome.scripting.executeScript({
 	  target: {tabId: tab.id},
 	  files: ['main.js']
 	})
-	chrome.browserAction.setBadgeBackgroundColor(
+	chrome.action.setBadgeBackgroundColor(
 		{color: "#8CD7A0"}
 	)
 	console.log("injected breading script")
-});
-
+}
