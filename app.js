@@ -13,7 +13,9 @@ chrome.action.onClicked.addListener((tab) => {
 	  target: {tabId: tab.id},
 	  files: ['main.js']
 	})
-	chrome.browserAction.setBadgeBackgroundColor({color: [0, 200, 100, 255]})
-	.then(() => console.log("injected breading script"))
+	chrome.browserAction.setBadgeBackgroundColor(
+		{color: "#8CD7A0"}
+	)
+	console.log("injected breading script")
 });
 
