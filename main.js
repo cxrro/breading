@@ -1,10 +1,10 @@
 function keypress(event) {
 	if (event.key === '`' || event.code === 'Backquote') {
 		highlightAndNewTag();
-	  }
-  }
+	}
+}
 
-  document.addEventListener('keydown', keypress);
+document.addEventListener('keydown', keypress);
 
 function highlightAndNewTag(){
 	var newest = null;
