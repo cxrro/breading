@@ -15,7 +15,7 @@
     "content_scripts": [
         {
           "matches": ["https://taguette.communitydata.science/*","https://app.taguette.org/*"],
-          "js": ["main.js"]
+          "js": ["main.js", "menu.js"]
         }
       ]
 }
