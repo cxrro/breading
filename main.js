@@ -1,21 +1,21 @@
-var keybinding;
+var keybindingTag;
 
 document.addEventListener('keydown', function(event) {
-  if (!keybinding && event.code === 'Backquote') {
+  if (!keybindingTag && event.code === 'Backquote') {
     setKeybinding();
   }
 });
 
 // function to handle the prompt and button logic
 function setKeybinding() {
-  keybinding = prompt("Enter the key you want to set as the keybinding:");
-  if(keybinding == null || keybinding == "") {
-    keybinding = "default value";
+  keybindingTag = prompt("Enter the key you want to set as the new tag keybinding:");
+  if(keybindingTag == null || keybindingTag == "") {
+    keybindingTag = "`";
   }
 }
 
 function keypress(event) {
-	if (event.key === keybinding) {
+	if (event.key === keybindingTag) {
 		highlightAndNewTag();
 	}
 }

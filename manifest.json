@@ -10,7 +10,7 @@
     ],
     "author": "carro",
     "action":{
-        "default_title": "TAGUETTE HIGHLIGHT"
+        "default_title": "bread"
     },
     "content_scripts": [
         {
