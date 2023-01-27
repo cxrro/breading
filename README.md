@@ -1,14 +1,14 @@
 # chromium extension for taguette functionality
 
 currently supports:
-- quick add new tag to highlight with "\`" -- click and drag to highlight like usual and press `
+- quick add new tag to highlight -- press ` to set your hotkey
+- expanded tags menu with multiple columns
 
-it's built for taguette 1.1 but should run on newer versions.
-
-change the domain in manifest if applicable
+if you're using a taguette server other than the public (taguette.org) or cdsc ones, add the url in manifest.json
 
 to-do:
 - [ ] change extension icon when active
 - [x] customizeable hotkey
 - [ ] see tags on hover
 - [ ] search tags
+- [x] expanded tag menu (emily)
