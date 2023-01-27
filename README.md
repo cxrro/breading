@@ -7,7 +7,7 @@ currently supports:
 if you're using a taguette server other than the public (taguette.org) or cdsc ones, add the url in manifest.json
 
 to-do:
-- [ ] change extension icon when active
+- [ ] extension menu with hotkey/module settings
 - [x] customizeable hotkey
 - [ ] see tags on hover
 - [ ] search tags
