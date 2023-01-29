@@ -9,6 +9,5 @@ if you're using a taguette server other than the public (taguette.org) or cdsc o
 to-do:
 - [ ] extension menu with hotkey/module settings
 - [x] customizeable hotkey
-- [ ] see tags on hover
 - [ ] search tags
 - [x] expanded tag menu (emily)
