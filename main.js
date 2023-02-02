@@ -23,7 +23,6 @@ function keypress(event) {
 document.addEventListener('keydown', keypress);
 function highlightAndNewTag(){
 	var newest = null;
-	var creating = true;
 	var current_selection = describeSelection();
 	createHighlight(current_selection);
 
@@ -100,16 +99,15 @@ function highlightAndNewTag(){
 		return parseInt(node.id.substring(11)) + offset;
 	}
 	// keep checking for the tag to be added
-	setInterval(checkTagAdded, 1000);
+	var tagAdded = setInterval(checkTagAdded, 1000);
 
 	// check if the tag has been added
 	function checkTagAdded() {
-		if (creating) {
-			findNewest();
-			if (newest) {
-				saveHighlight();
-				creating = false;
-			}
+		findNewest();
+		if (newest) {
+			saveHighlight();
+			creating = false;
+			clearInterval(tagAdded);
 		}
 	}
 
